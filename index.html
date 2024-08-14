@@ -9,29 +9,26 @@
     <meta name="author" content="News Today">
     
     <title>News Today</title>
-</head>
-<body>
-    <!-- Tạo iframe để hiển thị các trang -->
-    <iframe id="myIframe" width="100%" height="500px" frameborder="0"></iframe>
-</body>
-
 
     <script type="text/javascript">
-        // Hàm để điều hướng iframe theo thứ tự
         function navigateIframe() {
             const iframe = document.getElementById('myIframe');
-            let step = 0;
-
+            
             setTimeout(function() {
                 iframe.src = 'https://www.highratecpm.com/hnihvj8535?key=d45e8f386f2bc095940f43317b1fa8fd';
-            }, 0); // Điều hướng link đầu tiên ngay lập tức
+            }, 0); // Điều hướng đến link đầu tiên ngay lập tức
 
             setTimeout(function() {
                 iframe.src = 'https://www.facebook.com';
-            }, 2000); // Điều hướng link thứ hai sau 2 giây
+            }, 2000); // Điều hướng đến link thứ hai sau 2 giây
         }
 
-        // Tự động chạy hàm sau khi trang tải xong
-        navigateIframe();
+        // Đảm bảo iframe đã tải trước khi điều hướng
+        window.onload = navigateIframe;
     </script>
+</head>
+<body>
+    <!-- Đảm bảo iframe có mặt trước khi chạy script -->
+    <iframe id="myIframe" width="100%" height="500px" frameborder="0"></iframe>
+</body>
 </html>
